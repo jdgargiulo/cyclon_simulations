@@ -5,7 +5,8 @@
 rop<-2000                              # densidad de partículas [kg/m3]
 Dparticulas<-seq(1,30,1)              # diametro particulas [micrones]
 Dp<-Dparticulas*0.000001              # diámetro de particlas [m]
-flow<-seq(16.7,100.2,15)                # Caudal entrada [l/min]
+#flow<-seq(16.7,100.2,15)                # Caudal entrada [l/min]
+flow<-seq(2,20,2)
 Q<-flow*0.0000167                    # caudal entrada [m3/s]
 Dp;Q
 
@@ -15,7 +16,7 @@ Dp;Q
 ## 1) Definimos familia a utilizar
 ## Familias: stair, swift, echeverri, SRI, GK, SCC, URG
 
-familia<-"GK"
+familia<-"URG"
 
 # Definir diámetro del cuerpo Dc y Familia
 
@@ -121,6 +122,8 @@ for (i in 3:ncol(res)) {
 legend(20,95, c(flow), lty=c(1,3:ncol(res)), col=c(1,3:ncol(res)), title = "Caudal [l/min]")
 
 plot(Q/0.000016667, D50*1000000, xlab="Caudal [l/min]", ylab = "D50 [micrones]", type="b")
+
+
 
 ## Tiempo estimado de recolección de material
 # 1) TSP: MP sedimentable total (rangos 50-100 micrones)
