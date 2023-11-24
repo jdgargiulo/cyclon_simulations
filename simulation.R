@@ -118,7 +118,7 @@ plot(Dp*1000000,res[,2]*100, type = "l", xlab="Diámetro de Partícula [micrones
 for (i in 3:ncol(res)) {
   lines(res[i] * 100, lty = i, col = i)
 }
-legend(20,80, c(flow), lty=c(1,3:ncol(res)), col=c(1,3:ncol(res)), title = "Caudal [l/min]")
+legend(20,95, c(flow), lty=c(1,3:ncol(res)), col=c(1,3:ncol(res)), title = "Caudal [l/min]")
 
 plot(Q/0.000016667, D50*1000000, xlab="Caudal [l/min]", ylab = "D50 [micrones]", type="b")
 
