@@ -1,26 +1,26 @@
-## Inicialización de parámetros
+## Declaración de parámetros
 
 
 
 rop<-2000                              # densidad de partículas [kg/m3]
-Dparticulas<-seq(1,30,1)              # diametro particulas [micrones]
-Dp<-Dparticulas*0.000001              # diámetro de particlas [m]
+Dparticulas<-seq(1,30,1)              # diámetro partículas [micrones]
+Dp<-Dparticulas*0.000001              # diámetro de partículas [m]
 #flow<-seq(16.7,100.2,15)                # Caudal entrada [l/min]
 flow<-seq(2,20,2)
 Q<-flow*0.0000167                    # caudal entrada [m3/s]
 Dp;Q
 
-#length(flow)
+#length(flow) 
 
 
 ## 1) Definimos familia a utilizar
 ## Familias: stair, swift, echeverri, SRI, GK, SCC, URG
 
-familia<-"URG"
+familia<-"SRI"
 
 # Definir diámetro del cuerpo Dc y Familia
 
-Dc<-0.035    # Diametro del cuerpo en [m]
+Dc<-0.035    # Diámetro del cuerpo en [m]
 
 
 resultado<-modelo_de_ciclon(Dc,familia)
@@ -45,6 +45,9 @@ Vi<-Q/(a*b)
 # 2.1) Longitud natural del ciclón (L)
 L<- 2.9*Ds*(Dc**2/(a*b))**(1/3)
 ifelse(L<H-S,print("Long natural correcta"), print("long natural incorrecta"))
+
+H-S
+
 
 # 2.2) Volumen evaluado sobre la salida del ciclón (Vsc)
 Vsc<-(pi/4)*(S-a/2)*(Dc**2-Ds**2)
